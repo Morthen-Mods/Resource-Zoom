@@ -167,7 +167,7 @@ key_key.debug.profilingChart:key.keyboard.1
 key_key.debug.fpsCharts:key.keyboard.2
 key_key.debug.networkCharts:key.keyboard.3
 key_key.debug.lightmapTexture:key.keyboard.4
-key_key.zoom:key.keyboard.y
+key_key.resource_zoom.zoom:key.keyboard.x
 soundCategory_master:0.25165562913907286
 soundCategory_music:0.20774647887323944
 soundCategory_record:1.0

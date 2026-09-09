@@ -12,10 +12,9 @@ import org.slf4j.LoggerFactory;
 public class ZoomConstants {
     public static final String MOD_ID = "resource_zoom";
     public static final String MOD_NAME = "Resource Zoom";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 
-    public static final KeyMapping.Category CATEGORY = new KeyMapping.Category(Identifier.fromNamespaceAndPath(MOD_ID, "category"));
-    public static final KeyMapping ZOOM = new KeyMapping("key.zoom", GLFW.GLFW_KEY_Z, CATEGORY);
+    public static final KeyMapping.Category CATEGORY = new KeyMapping.Category(Identifier.fromNamespaceAndPath(MOD_ID, "controls"));
+    public static final KeyMapping ZOOM = new KeyMapping("key.resource_zoom.zoom", GLFW.GLFW_KEY_X, CATEGORY);
 
     private static final Minecraft client = Minecraft.getInstance();
 
