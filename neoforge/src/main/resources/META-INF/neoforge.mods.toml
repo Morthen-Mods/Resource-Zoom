@@ -6,7 +6,8 @@ license = "${mod_license}"
     modId = "${mod_id}"
     version = "${version}"
     displayName = "${mod_name}"
-    logoFile="${mod_id}_banner.png"
+    iconFile="${mod_id}.png"
+    bannerFile="${mod_id}_banner.png"
     authors = "${mod_author}"
     description = '''${mod_description}'''
 
@@ -14,8 +15,15 @@ license = "${mod_license}"
     config = "${mod_id}.mixins.json"
 
 [[dependencies.${mod_id}]]
+    modId = "neoforge"
+    type="required"
+    versionRange = "[${neoforge_version},)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
     modId = "minecraft"
     type="required"
-    versionRange = "[26.1, 26.2)"
+    versionRange = "[${minecraft_version},)"
     ordering = "NONE"
     side = "BOTH"
