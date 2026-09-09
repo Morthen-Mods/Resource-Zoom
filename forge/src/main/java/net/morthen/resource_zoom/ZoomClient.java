@@ -1,16 +1,15 @@
 package net.morthen.resource_zoom;
 
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(ZoomConstants.MOD_ID)
 public class ZoomClient {
-    public ZoomClient(FMLJavaModLoadingContext context) {
-
+    public ZoomClient() {
+        RegisterKeyMappingsEvent.BUS.addListener(this::registerKeybinds);
     }
 
-    public static void ClientInit(FMLClientSetupEvent event) {
-
+    private void registerKeybinds(RegisterKeyMappingsEvent event) {
+        event.register(ZoomConstants.ZOOM);
     }
 }

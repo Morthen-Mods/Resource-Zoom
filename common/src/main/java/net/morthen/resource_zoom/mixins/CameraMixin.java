@@ -13,8 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Camera.class)
 public abstract class CameraMixin {
 
-    @Shadow
-    @Final
+    @Shadow @Final
     private Minecraft minecraft;
 
     @Inject(at = @At("RETURN"), method = "calculateFov(F)F", cancellable = true)
