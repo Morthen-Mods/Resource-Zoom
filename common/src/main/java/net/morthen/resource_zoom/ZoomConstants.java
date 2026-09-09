@@ -4,6 +4,7 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.OptionInstance;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Mth;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,17 +20,13 @@ public class ZoomConstants {
     private static final Minecraft client = Minecraft.getInstance();
 
     private static final Double defaultZoom = 3.0;
-    private static Double currentLevel;
+    private static Double currentLevel = defaultZoom;
     private static Double defaultSens;
 
     public static float changeFov(float fov) {
         OptionInstance<Double> mouseSens = client.options.sensitivity();
 
-        if (currentLevel == null) currentLevel = defaultZoom;
-
         if (!ZOOM.isDown()) {
-            currentLevel = defaultZoom;
-
             if (defaultSens != null) {
                 mouseSens.set(defaultSens);
                 defaultSens = null;
@@ -56,6 +53,6 @@ public class ZoomConstants {
         if (amount > 0) currentLevel *= 1.1;
         else if (amount < 0) currentLevel *= 0.9;
 
-        currentLevel = Math.clamp(currentLevel,1, 50);
+        currentLevel = Mth.clamp(currentLevel, 1, 50);
     }
 }
