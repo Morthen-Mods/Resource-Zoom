@@ -1,10 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.morthen.resource_zoom.mixin",
+  "package": "net.morthen.resource_zoom.mixins",
   "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "InventoryMixin"
+  ],
   "client": [
-
+    "CameraMixin",
+    "MouseMixin"
   ],
   "injectors": {
     "defaultRequire": 1
