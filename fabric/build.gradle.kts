@@ -9,6 +9,7 @@ multiloader {
     fabricLoaderVersion = providers.gradleProperty("fabric_loader")
 
     withModPublish {
+        server = false
         required.set(listOf(
             "fabric-api"
         ))
