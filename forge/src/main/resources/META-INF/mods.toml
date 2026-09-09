@@ -12,15 +12,8 @@ issueTrackerURL = "${issues_url}"
     description = '''${mod_description}'''
 
 [[dependencies.${mod_id}]]
-    modId = "forge"
-    mandatory = true
-    versionRange = "[${forge_version},)"
-    ordering = "NONE"
-    side = "BOTH"
-
-[[dependencies.${mod_id}]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[${minecraft_version},)"
+    versionRange = "[26.1, 26.2)"
     ordering = "NONE"
     side = "BOTH"
