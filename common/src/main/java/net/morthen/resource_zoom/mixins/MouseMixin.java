@@ -11,9 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MouseMixin {
     @Inject(at = @At("RETURN"), method = "onScroll(JDD)V")
     private void zoom$onMouseScroll(long handle, double xOffset, double yOffset, CallbackInfo ci) {
-        if (ZoomConstants.ZOOM.isDown()) {
-            ZoomConstants.LOGGER.error("Offset: {}", yOffset);
-            ZoomConstants.onMouseScroll(yOffset);
-        }
+        ZoomConstants.onMouseScroll(yOffset);
     }
 }

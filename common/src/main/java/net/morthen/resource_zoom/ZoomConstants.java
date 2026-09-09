@@ -27,6 +27,8 @@ public class ZoomConstants {
         OptionInstance<Double> mouseSens = client.options.sensitivity();
 
         if (!ZOOM.isDown()) {
+            currentLevel = defaultZoom;
+
             if (defaultSens != null) {
                 mouseSens.set(defaultSens);
                 defaultSens = null;

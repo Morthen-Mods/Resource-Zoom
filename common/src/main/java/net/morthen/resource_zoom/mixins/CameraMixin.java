@@ -20,7 +20,12 @@ public abstract class CameraMixin {
     @Inject(at = @At("RETURN"), method = "calculateFov(F)F", cancellable = true)
     public void zoom$calculateFov(float partialTicks, CallbackInfoReturnable<Float> cir) {
         float newFov = ZoomConstants.changeFov(this.minecraft.options.fov().get());
-        ZoomConstants.LOGGER.error("New FOV: {}", newFov);
+        cir.setReturnValue(newFov);
+    }
+
+    @Inject(at = @At("RETURN"), method = "calculateHudFov(F)F", cancellable = true)
+    public void zoom$calculateHudFov(float partialTicks, CallbackInfoReturnable<Float> cir) {
+        float newFov = ZoomConstants.changeFov(this.minecraft.options.fov().get());
         cir.setReturnValue(newFov);
     }
 }
